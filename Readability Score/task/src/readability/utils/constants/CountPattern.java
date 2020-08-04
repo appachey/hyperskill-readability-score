@@ -1,4 +1,4 @@
-package readability;
+package readability.utils.constants;
 
 public final class CountPattern {
 

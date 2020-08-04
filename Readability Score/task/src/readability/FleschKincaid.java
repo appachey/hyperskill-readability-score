@@ -14,4 +14,12 @@ public class FleschKincaid implements ScoreDifficultyAlgorithm{
                 11.8 * ((double) syllablesSum / wordsCount) - 15.59;
     }
 
+    @Override
+    public String scoreInfo(String text) {
+        double score = this.score(text);
+        return "Flesch–Kincaid readability tests: " +
+                score + " (about " +
+                DifficultyLevel.difficultyLevel(score) +
+                " year old).";
+    }
 }

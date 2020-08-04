@@ -1,5 +1,8 @@
 package readability;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class FleschKincaid {
 
     public static boolean isVowel(char ch) {
@@ -28,5 +31,18 @@ public class FleschKincaid {
 
     public static boolean isPolySyllabel(String word) {
         return syllabelsCount(word) > 2;
+    }
+
+    public static double score(String text) {
+        int wordsCount = TextUtil.count(text, CountPattern.WORD);
+        int sentencesCount = TextUtil.count(text, CountPattern.SENTENCE);
+        int syllablesSum = 0;
+        Pattern pat = Pattern.compile(CountPattern.WORD);
+        Matcher match = pat.matcher(text);
+        while (match.find()) {
+            syllablesSum += syllabelsCount(match.group());
+
+        }
+        return 0.39 * ((double) wordsCount / sentencesCount) + 11.8 * ((double) syllablesSum / wordsCount) - 15.59;
     }
 }

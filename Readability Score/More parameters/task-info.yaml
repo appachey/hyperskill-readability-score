@@ -474,6 +474,12 @@ files:
 - name: src/readability/FleschKincaid.java
   visible: true
   learner_created: true
+- name: src/readability/TextUtil.java
+  visible: true
+  learner_created: true
+- name: src/readability/CountPattern.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/39/stages/208/implement
 status: Unchecked
 record: -1

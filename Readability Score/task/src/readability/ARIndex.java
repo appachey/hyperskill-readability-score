@@ -3,11 +3,6 @@ package readability;
 import readability.utils.TextUtil;
 import readability.utils.constants.CountPattern;
 
-import java.util.Formatter;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class ARIndex implements ScoreDifficultyAlgorithm {
 
     @Override

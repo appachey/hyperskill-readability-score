@@ -1,7 +1,5 @@
 package readability;
 
-import java.util.Locale;
-
 public class Solvation {
 
     public static void main(String[] args) {

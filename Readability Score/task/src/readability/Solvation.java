@@ -8,8 +8,10 @@ public class Solvation {
         ScoreDifficultyAlgorithm scoreFK = new FleschKincaid();
         ScoreDifficultyAlgorithm smogIndex = new SMOGIndex();
         ScoreDifficultyAlgorithm ari = new ARIndex();
+        ScoreDifficultyAlgorithm cli = new ColemanLiauIndex();
         System.out.println(ari.scoreInfo(str));
         System.out.println(scoreFK.scoreInfo(str));
         System.out.println(smogIndex.scoreInfo(str));
+        System.out.println(cli.scoreInfo(str));
     }
 }

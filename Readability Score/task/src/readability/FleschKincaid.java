@@ -20,6 +20,6 @@ public class FleschKincaid implements ScoreDifficultyAlgorithm{
         return "Flesch–Kincaid readability tests: " +
                 score + " (about " +
                 DifficultyLevel.difficultyLevel(score) +
-                " year old).";
+                " year olds).";
     }
 }

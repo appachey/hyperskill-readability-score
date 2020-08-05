@@ -19,7 +19,7 @@ public class ARIndex implements ScoreDifficultyAlgorithm {
         return "Automated Readability Index: " +
                 score + " (about " +
                 DifficultyLevel.difficultyLevel(score) +
-                " year old).";
+                " year olds).";
     }
 
 }

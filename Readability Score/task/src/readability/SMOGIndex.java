@@ -5,18 +5,12 @@ import readability.utils.constants.CountPattern;
 
 public class SMOGIndex implements ScoreDifficultyAlgorithm {
     @Override
-    public double score(String text) {
-        int polysyllabels = TextUtil.polySyllabelCount(text);
-        int sentences = TextUtil.count(text, CountPattern.SENTENCE);
-        return 1.043 * Math.sqrt((double) polysyllabels * 30 / sentences) + 3.1291;
+    public double score(TextElementsAnalyzer analyser) {
+        return 1.043 * Math.sqrt((double) analyser.getPolysyllables() * 30 / analyser.getSentences()) + 3.1291;
     }
 
     @Override
-    public String scoreInfo(String text) {
-        double score = this.score(text);
-        return "Simple Measure of Gobbledygook: " +
-                score + " (about " +
-                DifficultyLevel.difficultyLevel(score) +
-                " year olds).";
+    public String toString() {
+        return "Simple Measure of Gobbledygook";
     }
 }

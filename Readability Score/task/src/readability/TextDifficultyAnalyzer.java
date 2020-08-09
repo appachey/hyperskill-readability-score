@@ -9,7 +9,7 @@ public class TextDifficultyAnalyzer {
 
     public void analyze(ScoreDifficultyAlgorithm algorithm) {
         double score = algorithm.score(this.elemAnalyser);
-        String output = algorithm + " tests: " + score +
+        String output = algorithm + ": " + score +
                 " (about " + DifficultyLevel.difficultyLevel(score) +
                 " year olds).";
         System.out.println(output);

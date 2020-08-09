@@ -467,6 +467,9 @@ files:
 - name: src/readability/TextElementsAnalyzer.java
   visible: true
   learner_created: true
+- name: src/readability/in.txt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/39/stages/208/implement
 status: Unchecked
 record: -1

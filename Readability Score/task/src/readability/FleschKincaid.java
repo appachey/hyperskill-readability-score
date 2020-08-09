@@ -14,6 +14,6 @@ public class FleschKincaid implements ScoreDifficultyAlgorithm{
 
     @Override
     public String toString() {
-        return "Flesch–Kincaid readability";
+        return "Flesch–Kincaid readability tests";
     }
 }

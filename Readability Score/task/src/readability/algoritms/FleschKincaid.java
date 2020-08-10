@@ -1,6 +1,8 @@
-package readability;
+package readability.algoritms;
 
-public class FleschKincaid implements ScoreDifficultyAlgorithm{
+import readability.analyzers.TextElementsAnalyzer;
+
+public class FleschKincaid implements ScoreDifficultyAlgorithm {
 
     @Override
     public double score(TextElementsAnalyzer analyzer) {

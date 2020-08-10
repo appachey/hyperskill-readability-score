@@ -1,4 +1,4 @@
-package readability;
+package readability.analyzers;
 
 public class DifficultyLevel {
     private static final String[] ageGrade = {

@@ -1,4 +1,4 @@
-package readability;
+package readability.analyzers;
 
 import readability.utils.TextUtil;
 import readability.utils.constants.CountPattern;

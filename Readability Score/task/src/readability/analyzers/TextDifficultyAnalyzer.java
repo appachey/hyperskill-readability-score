@@ -1,4 +1,6 @@
-package readability;
+package readability.analyzers;
+
+import readability.algoritms.ScoreDifficultyAlgorithm;
 
 public class TextDifficultyAnalyzer {
 

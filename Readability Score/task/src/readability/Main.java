@@ -1,5 +1,11 @@
 package readability;
 
+import readability.algoritms.ARIndex;
+import readability.algoritms.ColemanLiauIndex;
+import readability.algoritms.FleschKincaid;
+import readability.algoritms.SMOGIndex;
+import readability.analyzers.TextDifficultyAnalyzer;
+import readability.analyzers.TextElementsAnalyzer;
 import readability.utils.ReadUtility;
 
 import java.util.Scanner;
@@ -32,8 +38,6 @@ public class Main {
                 difficultyAnalyzer.analyze(text, new FleschKincaid());
                 difficultyAnalyzer.analyze(text, new SMOGIndex());
                 difficultyAnalyzer.analyze(text, new ColemanLiauIndex());
-                System.out.println();
-
                 break;
         }
     }

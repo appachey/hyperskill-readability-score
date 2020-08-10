@@ -1,6 +1,8 @@
-package readability;
+package readability.algoritms;
 
-public class ColemanLiauIndex implements ScoreDifficultyAlgorithm{
+import readability.analyzers.TextElementsAnalyzer;
+
+public class ColemanLiauIndex implements ScoreDifficultyAlgorithm {
 
     @Override
     public double score(TextElementsAnalyzer analyser) {

@@ -1,4 +1,6 @@
-package readability;
+package readability.algoritms;
+
+import readability.analyzers.TextElementsAnalyzer;
 
 public class SMOGIndex implements ScoreDifficultyAlgorithm {
     @Override

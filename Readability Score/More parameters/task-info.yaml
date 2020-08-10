@@ -408,56 +408,40 @@ files:
 - name: src/readability/ScoreDifficultyAlgorithm.java
   visible: true
   learner_created: true
-- name: src/readability/SMOGIndex.java
+- name: src/readability/utils/TextUtil.java
   visible: true
   learner_created: true
-- name: src/readability/ARIndex.java
+- name: src/readability/utils/ReadUtility.java
   visible: true
   text: |
     package readability;
 
-    import java.util.Formatter;
-    import java.util.Locale;
-    import java.util.regex.Matcher;
-    import java.util.regex.Pattern;
+    import java.io.IOException;
+    import java.nio.file.Files;
+    import java.nio.file.Paths;
 
-    public class TextDificultyAnalyzer {
-        private final String text;
-        private static final String SENTENCE_PATTERN = "(?m)\\p{javaUpperCase}[^.!?]*[.!?]*|\\s+[^.!?]*[.!?]*";
-        private static final String WORD_PATTERN = "(?m)\\w+,\\w+|\\w+";
-        private static final String CHARACTER_PATTERN = "(?m)\\S+?";
-
-        public TextDificultyAnalyzer(String text) {
-            this.text = text;
-        }
-
-        private int sentenceCount(String pattern) {
-            int matchCount = 0;
-            Pattern pat = Pattern.compile(pattern);
-            Matcher match = pat.matcher(text);
-            while (match.find()) {
-                matchCount++;
+    public class ReadUtility {
+        public static String readFile(String inputFileName) {
+            String output = null;
+            try {
+                byte[] bytes = Files.readAllBytes(Paths.get(inputFileName));
+                output = new String(bytes);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            return matchCount;
+            return output;
         }
-
-        private double score() {
-            return (4.71 * sentenceCount(CHARACTER_PATTERN) / sentenceCount(WORD_PATTERN) +
-                    (0.5 * sentenceCount(WORD_PATTERN) / sentenceCount(SENTENCE_PATTERN)) - 21.43);
-        }
-
-        public void scoreInfo() {
-            System.out.println("Words: " + sentenceCount(WORD_PATTERN));
-            System.out.println("Sentences: " + sentenceCount(SENTENCE_PATTERN));
-            System.out.println("Characters: " + sentenceCount(CHARACTER_PATTERN));
-            Formatter formatter = new Formatter(Locale.UK);
-            formatter.format("The score is: %.2f\n", score());
-            System.out.println(formatter);
-            DifficultyLevel.difficultyLevel(score());
-        }
-
     }
   learner_created: false
+- name: src/readability/utils/constants/CountPattern.java
+  visible: true
+  learner_created: true
+- name: src/readability/ARIndex.java
+  visible: true
+  learner_created: true
+- name: src/readability/SMOGIndex.java
+  visible: true
+  learner_created: true
 - name: src/readability/ColemanLiauIndex.java
   visible: true
   learner_created: true
@@ -467,9 +451,10 @@ files:
 - name: src/readability/TextElementsAnalyzer.java
   visible: true
   learner_created: true
-- name: src/readability/in.txt
-  visible: true
-  learner_created: true
 feedback_link: https://hyperskill.org/projects/39/stages/208/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/39/stages/208/implement">JetBrains
+    Academy</a>
+  time: Mon, 10 Aug 2020 13:20:50 UTC
 record: -1

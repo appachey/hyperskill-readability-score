@@ -1,13 +1,9 @@
 package readability;
 
-import readability.utils.TextUtil;
-import readability.utils.constants.CountPattern;
-
 public class FleschKincaid implements ScoreDifficultyAlgorithm{
 
     @Override
     public double score(TextElementsAnalyzer analyzer) {
-
         return 0.39 * ((double) analyzer.getWords() / analyzer.getSentences()) +
                 11.8 * ((double) analyzer.getSyllabels() / analyzer.getWords()) - 15.59;
     }

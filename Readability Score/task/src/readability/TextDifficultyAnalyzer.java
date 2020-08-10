@@ -1,14 +1,10 @@
 package readability;
 
 public class TextDifficultyAnalyzer {
-    private TextElementsAnalyzer elemAnalyser;
 
-    public TextDifficultyAnalyzer(TextElementsAnalyzer elemAnalyser){
-        this.elemAnalyser = elemAnalyser;
-    }
-
-    public void analyze(ScoreDifficultyAlgorithm algorithm) {
-        double score = algorithm.score(this.elemAnalyser);
+    public void analyze(String text, ScoreDifficultyAlgorithm algorithm) {
+        TextElementsAnalyzer elemAnalyser = new TextElementsAnalyzer(text);
+        double score = algorithm.score(elemAnalyser);
         String output = algorithm + ": " + score +
                 " (about " + DifficultyLevel.difficultyLevel(score) +
                 " year olds).";

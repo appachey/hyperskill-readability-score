@@ -1,8 +1,5 @@
 package readability;
 
-import readability.utils.TextUtil;
-import readability.utils.constants.CountPattern;
-
 public class SMOGIndex implements ScoreDifficultyAlgorithm {
     @Override
     public double score(TextElementsAnalyzer analyser) {
